@@ -33,9 +33,6 @@ public class FileController {
     private FileStorageService fileStorageService;
     
     @Autowired
-    private BatchService batchService;
-    
-    @Autowired
     private TaskStatusService taskStatusService;
     
     @PostMapping("/uploadFile")
@@ -44,10 +41,8 @@ public class FileController {
         String fileName = fileStorageService.storeFile(file);
         
             
-        Task registeredTask = taskStatusService.registerTask(fileName);
+        Task registeredTask = taskStatusService.registerTask(new Task(fileName, 1));
         
-        batchService.runBatchSchedulerJob();
-
         return new UploadFileResponse(fileName, registeredTask.getTid(),
                 file.getContentType(), file.getSize());
     }

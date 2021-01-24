@@ -1,5 +1,7 @@
 package com.vmware.assignment.task.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -19,6 +21,8 @@ import java.nio.file.StandardCopyOption;
 
 @Service
 public class FileStorageService {
+	
+	private static final Logger logger = LoggerFactory.getLogger(FileStorageService.class);
 
     private final Path fileStorageLocation;
 
@@ -34,6 +38,7 @@ public class FileStorageService {
         try {
             Files.createDirectories(this.fileStorageLocation);
         } catch (Exception ex) {
+        	logger.error(ex.getMessage(), ex);
             throw new FileStorageException("Could not create the directory where the uploaded files will be stored.", ex);
         }
     }
@@ -54,6 +59,7 @@ public class FileStorageService {
 
             return fileName;
         } catch (IOException ex) {
+        	logger.error(ex.getMessage(), ex);
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
         }
     }

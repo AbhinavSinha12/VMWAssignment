@@ -84,7 +84,7 @@ public class SpringBatchConfig {
         DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
 
         lineTokenizer.setDelimiter(",");
-        lineTokenizer.setStrict(false);
+        lineTokenizer.setStrict(true);
         lineTokenizer.setNames("username", "age");
 
         BeanWrapperFieldSetMapper<User> fieldSetMapper = new BeanWrapperFieldSetMapper<>();
