@@ -35,7 +35,6 @@ Testing with Postman Runner
 
 PostmanCollection
 
-{"info":{"_postman_id":"772326e8-7f32-47a1-828f-2c1a16e16504","name":"VMWAssignment_PostmanCollection","schema":"https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"},"item":[{"name":"http:\/\/localhost:8080\/uploadFile","id":"e6f5772d-12ce-4bf0-8a0e-0800349c9d8b","request":{"method":"POST","header":[],"body":{"mode":"formdata","formdata":[{"key":"file","type":"file","src":"\/Users\/abhinav\/uploads\/user.txt"}]},"url":"http:\/\/localhost:8080\/uploadFile"},"response":[]},{"name":"http:\/\/localhost:8080\/getTaskStatus\/2","id":"573c8d1a-beb5-46e9-a2f9-0ddbf989dc5b","protocolProfileBehavior":{"disableBodyPruning":true},"request":{"method":"GET","header":[],"body":{"mode":"formdata","formdata":[{"key":"","type":"file","src":[]}]},"url":"http:\/\/localhost:8080\/getTaskStatus\/2"},"response":[]},{"name":"http:\/\/localhost:8080\/api\/timer\/runbatchprocessor","id":"5cc47e9b-fd91-4e82-9a16-bc0e644d124f","request":{"method":"POST","header":[],"url":"http:\/\/localhost:8080\/api\/timer\/runbatchprocessor"},"response":[]}]}
 
 
 What is does ?
