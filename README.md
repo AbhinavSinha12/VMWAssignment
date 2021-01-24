@@ -1,55 +1,31 @@
-# VMWAssignment
-
 
 For building and running the application below is needed:
 JDK 1.8
 Maven 3
+Docker
 
- Building the tool:
- From the project path where pom.xml is present enter the below command.
-	mvn clean install
 
-Technology stack
-
-Server - Backend
+Technology Stack Server - Backend
 JDK
 Spring Boot
 Maven
 JSON Web Token
 
-Running the application with Maven
-It can use the Spring Boot Maven plugin like so:
-
-$ git clone https://github.com/AbhinavSinha12/VMWAssignment.git
-$ cd Spring-Boot-Application-Template
-$ mvn spring-boot:run
-
-Running the application with CommandLine
-
-java -jar /Users/abhinav/.m2/repository/com/vmware/assignment/assignment/0.0.1-SNAPSHOT/assignment-0.0.1-SNAPSHOT.jar
-
-Running the application with IDE
-
-Alternatively it can be downloaded as zip file from git and to execute the main method in the VmWareAssignmentApplication  class from the IDE.
-Download the zip or clone the Git repository.
-Unzip the zip file.
-Open Command Prompt and Change directory (cd) to folder containing pom.xml
-Open Eclipse/IntelliJ
-File -> Import -> Existing Maven Project -> Navigate to the folder where you unzipped the zip
-Select the project
-Choose the Spring Boot Application file (search for @SpringBootApplication)
-Right Click on the file and Run as Java Application
-
-Running the application with Executable JAR
-The code can also be built into a jar and then executed/run. Once the jar is built, run the jar by double clicking on it or by using the command
-
-$ git clone https://github.com/AbhinavSinha12/VMWAssignment.git
-$ cd VMWareAssignment
-$ mvn package -DskipTests
-$ java -jar target/assignment-0.0.1-SNAPSHOT.jar
 
 
 
+Docker Container Initialiser.
+
+To create a docker container.
+
+Create docker file 
+Create starter file to run the associated jar
+	java -jar /opt/abhinav/app/VMW/assignment-0.0.1-SNAPSHOT.jar
+
+Write build.sh in the VMWareAssignment folder.
+Create file run.sh in the target folder and write the followingdocker run --restart=always --name vmw-app  -p 8080:8080 -d   vmw:1.0.0 
+
+Load the docker image load <vmw.tar.gz
 
 
 Testing API
@@ -58,7 +34,10 @@ Testing with Postman Runner
 
 
 PostmanCollection
-
+
+{"info":{"_postman_id":"772326e8-7f32-47a1-828f-2c1a16e16504","name":"VMWAssignment_PostmanCollection","schema":"https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"},"item":[{"name":"http:\/\/localhost:8080\/uploadFile","id":"e6f5772d-12ce-4bf0-8a0e-0800349c9d8b","request":{"method":"POST","header":[],"body":{"mode":"formdata","formdata":[{"key":"file","type":"file","src":"\/Users\/abhinav\/uploads\/user.txt"}]},"url":"http:\/\/localhost:8080\/uploadFile"},"response":[]},{"name":"http:\/\/localhost:8080\/getTaskStatus\/2","id":"573c8d1a-beb5-46e9-a2f9-0ddbf989dc5b","protocolProfileBehavior":{"disableBodyPruning":true},"request":{"method":"GET","header":[],"body":{"mode":"formdata","formdata":[{"key":"","type":"file","src":[]}]},"url":"http:\/\/localhost:8080\/getTaskStatus\/2"},"response":[]},{"name":"http:\/\/localhost:8080\/api\/timer\/runbatchprocessor","id":"5cc47e9b-fd91-4e82-9a16-bc0e644d124f","request":{"method":"POST","header":[],"url":"http:\/\/localhost:8080\/api\/timer\/runbatchprocessor"},"response":[]}]}
+
+
 What is does ?
 
 This service allows to upload sample file which can be processed at the server to upload the data in the database. It returns task id associated with the process. User later can query the same task id and get the status of the task.
@@ -81,17 +60,5 @@ SpringBatchConfig class is responsible for setting the spring container with nec
 
 Spring Batch Working
 
+ 
 
-
-Docker Container Initialiser.
-
-To create a docker container.
-
-Create docker file 
-Create starter file to run the associated jar
-	java -jar /opt/abhinav/app/VMW/assignment-0.0.1-SNAPSHOT.jar
-
-Write build.sh in the VMWareAssignment folder.
-Create file run.sh in the target folder and write the followingdocker run --restart=always --name vmw-app  -p 8080:8080 -d   vmw:1.0.0 
-
-Load the docker image load <vmw.tar.gz
