@@ -42,6 +42,8 @@ What is does ?
 This service allows to upload sample file which can be processed at the server to upload the data in the database. It returns task id associated with the process. User later can query the same task id and get the status of the task.
 
 
+Spring Batch Working
+
 FileStorageService:
 This service is used to upload the files on the server. 
 
@@ -57,7 +59,7 @@ Spring Batch
 SpringBatchConfig class is responsible for setting the spring container with necessary information to execute the batch process to parse the file and upload the data in database.
 
 
-Spring Batch Working
+
 
  
 
